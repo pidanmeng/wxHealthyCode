@@ -4,7 +4,7 @@ export default defineAppConfig({
     'pages/index/healthyCode/index'
   ],
   window: {
-    backgroundColor: '#4287fd',
+    backgroundColor: '#f6f6f6',
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#4287fd',
     navigationBarTitleText: 'WeChat',
