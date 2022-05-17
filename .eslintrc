@@ -1,3 +1,6 @@
 {
-  "extends": ["taro/preact"]
+  "extends": [
+    "taro/preact",
+    "plugin:react/jsx-runtime"
+  ]
 }

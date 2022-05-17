@@ -1,0 +1,227 @@
+.app {
+  background-color: #f6f6f6;
+  min-height: 100vh;
+  z-index: -2;
+  position: absolute;
+  width: 100%;
+}
+
+.topBar {
+  background-image: linear-gradient(#4287fd, #3849f5, );
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: -1;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100px;
+    display: block;
+    background-color: #3849f5;
+    width: 100%;
+    height: 70px;
+    border-radius: 0 0 50% 50%;
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 34px;
+  margin: 0 45px 34px;
+  position: relative;
+  .logo {
+    position: absolute;
+    top: 34px;
+    left: 34px;
+    width: 64px;
+    height: 64px;
+  }
+  .qrCodeWrapper {
+    position: absolute;
+    right: 0;
+    top: 34px;
+    height: 64px;
+    width: 82px;
+    background-image: linear-gradient(90deg, #ecf6fe, #c0e4fe);
+    border-radius: 32px 0 0 32px;
+    .qrCodeButton {
+      height: 58px;
+      width: 58px;
+      margin: 4px;
+      border-radius: 50%;
+      background-image: linear-gradient(#8ec7fe, #1c8cfe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .qrCodeIcon {
+        width: 60%;
+        height: 60%;
+      }
+    }
+  }
+  .topContent {
+    display: flex;
+    color: #666666;
+    flex-direction: column;
+    align-items: center;
+    height: 64px;
+    font-size: 28px;
+  }
+  .avatarWrapper {
+    margin: 30px auto;
+    height: 354px;
+    width: 354px;
+    border-radius: 20px;
+    border: 15px dotted #208ffa;
+    animation: dotFlash 0.5s linear infinite;
+    display: flex;
+    padding: 8px;
+
+    .avatar {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 1;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .coreTips {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .qrCodeIconWrapper {
+      background: #e6f8e4;
+      border-radius: 12px;
+      padding: 3px;
+      width: 106px;
+      height: 106px;
+      overflow: hidden;
+      .qrCodeIcon {
+        background-image: url(https://lf3-static.bytednsdoc.com/obj/eden-cn/bpxnupqnult/qrcode-green.png);
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        transform: scale(.8);
+      }
+      .qrCodeDesc {
+        color: #14c602;
+        display: block;
+        height: 100%;
+        transform: translateY(-100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &Text {
+          font-size: 28px;
+          display: block;
+          background: #fff;
+          border-radius: 6px;
+          font-weight: bold;
+          padding: 6px;
+        }
+      }
+    }
+    .content {
+      margin: 0 20px;
+      color: #14c602;
+      font-size:56px;
+      font-weight: bold;
+      animation: textFlash 1s linear infinite;
+    }
+    .tip {
+      height: 48px;
+      width: 48px;
+    }
+  }
+  .hsCard {
+    margin-top: 48px;
+    width: 100%;
+  }
+  &.userInfo {
+    height: 248px;
+    display: flex;
+    .keys {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #9b9b9b;
+      font-size: 36px;
+      .key {
+        position: relative;
+        text-align: justify;
+        text-align-last: justify;
+        .keyText {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+        }
+        &::after {
+          content: ':';
+          position: absolute;
+          right: -20px;
+          bottom: 0;
+        }
+      }
+    }
+    .values {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      font-size: 36px;
+      .value {
+        display: flex;
+        justify-content: flex-end;
+        &:last-child {
+          color: red;
+        }
+      }
+    }
+  }
+}
+.buttonBack {
+  padding: 28px;
+  margin: 0 45px 34px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #2290fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes dotFlash {
+  0% {
+    border-radius: 20px;
+  }
+  49% {
+    border-radius: 20px;
+  }
+  50% {
+    border-radius: 30px;
+  }
+  100% {
+    border-radius: 30px;
+  }
+}
+
+@keyframes textFlash {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

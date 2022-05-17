@@ -1,0 +1,23 @@
+{
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "jkm查询",
+                    "pathName": "pages/index/healthyCode/index",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}
