@@ -8,7 +8,11 @@ import './index.scss';
 export default function Page() {
   const [time, setTime] = useState(dayjs(Date.now()).format('HH:mm:ss'));
   const [avatar, setAvatar] = useState('https://i0.hdslb.com/bfs/article/2df02beebe3318ac1b052598721bcb07934d3d84.jpg@942w_945h_progressive.webp');
-  useEffect(() => {
+
+    useEffect(() => {
+    const innerAudioContext = Taro.createInnerAudioContext();
+    innerAudioContext.autoplay = true;
+    innerAudioContext.src = 'https://lf3-static.bytednsdoc.com/obj/eden-cn/bpxnupqnult/adopt.m4a';
 
     try {
       Taro.getStorage({
