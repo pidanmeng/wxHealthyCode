@@ -7,13 +7,13 @@
 }
 
 .topBar {
-  background-image: linear-gradient(#4287fd, #3849f5, );
+  background-image: linear-gradient(#4287fd, #3849f5);
   width: 100%;
   height: 100px;
   position: fixed;
   z-index: -1;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100px;
     display: block;
@@ -107,7 +107,7 @@
         background-position: center;
         height: 100%;
         width: 100%;
-        transform: scale(.8);
+        transform: scale(0.8);
       }
       .qrCodeDesc {
         color: #14c602;
@@ -130,9 +130,8 @@
     .content {
       margin: 0 20px;
       color: #14c602;
-      font-size:56px;
+      font-size: 56px;
       font-weight: bold;
-      animation: textFlash 1s linear infinite;
     }
     .tip {
       height: 48px;
@@ -162,7 +161,7 @@
           justify-content: space-between;
         }
         &::after {
-          content: ':';
+          content: ":";
           position: absolute;
           right: -20px;
           bottom: 0;
@@ -208,20 +207,5 @@
   }
   100% {
     border-radius: 30px;
-  }
-}
-
-@keyframes textFlash {
-  0% {
-    opacity: 0;
-  }
-  49% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
   }
 }

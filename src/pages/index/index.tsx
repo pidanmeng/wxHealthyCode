@@ -1,29 +1,41 @@
-import { useEffect } from 'react';
-import { View } from '@tarojs/components'
-import Taro, { useDidShow } from '@tarojs/taro';
-import './index.scss'
-
+import { useEffect, useState } from "react";
+import { View } from "@tarojs/components";
+import Taro from "@tarojs/taro";
+import { IndexCard } from "./components/indexCard";
+import ScanCode from "../../assets/scan-code.png";
+import "./index.scss";
+import { goPage } from "../../utils/tools";
 
 export default function Page() {
-
-  const goCheckHealthyCode = () => {
-    Taro.scanCode({
-      success: () => {
-        Taro.navigateTo({
-          url: 'healthyCode/index'
-        })
-      },
-      fail: () => {
-        Taro.navigateTo({
-          url: 'healthyCode/index'
-        })
-      }
-    });
-  }
-
-  useDidShow(goCheckHealthyCode)
+  const [windowInfo] = useState(Taro.getWindowInfo());
+  const [buttonRect] = useState(Taro.getMenuButtonBoundingClientRect());
+  useEffect(() => {
+    console.log(windowInfo, buttonRect);
+  }, []);
 
   return (
-    <View className='app'></View>
-  )
+    <View className="app">
+      <View
+        className="container"
+        style={{
+          paddingTop: `${buttonRect.top}px`,
+        }}
+      >
+        <View
+          className="title"
+          style={{
+            height: `${buttonRect.height}px`,
+          }}
+        >
+          北京健康宝
+        </View>
+        <IndexCard
+          onClick={() => goPage("healthyCode/index")}
+          icon={ScanCode}
+          title="本人健康码自查询"
+        ></IndexCard>
+      </View>
+      <View className="bg"></View>
+    </View>
+  );
 }
