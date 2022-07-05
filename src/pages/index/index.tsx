@@ -50,7 +50,7 @@ export default function Page() {
           title="本人健康码自查询"
         ></IndexCard>
         <IndexCard
-          onClick={() => goScanPage("healthyCode/index")}
+          onClick={() => goScanPage("employeeScan/index")}
           icon={Employee}
           title="字节员工扫码登记"
         ></IndexCard>

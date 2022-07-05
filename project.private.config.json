@@ -16,13 +16,13 @@
                 },
                 {
                     "name": "健身房扫码登记",
-                    "pathName": "pages/index/healthyCode/index",
+                    "pathName": "pages/index/employeeScan/index",
                     "query": "",
                     "scene": null
                 },
                 {
                     "name": "字节员工扫码登记",
-                    "pathName": "pages/index/healthyCode/index",
+                    "pathName": "pages/index/employeeScan/index",
                     "query": "",
                     "scene": null
                 }
