@@ -3,8 +3,11 @@ import { View } from "@tarojs/components";
 import Taro from "@tarojs/taro";
 import { IndexCard } from "./components/indexCard";
 import ScanCode from "../../assets/scan-code.png";
+import Healthy from "../../assets/healthy.png";
+import Fitness from "../../assets/fitness.png";
+import Employee from "../../assets/employees.png";
 import "./index.scss";
-import { goPage } from "../../utils/tools";
+import { goPage, goScanPage } from "../../utils/tools";
 
 export default function Page() {
   const [windowInfo] = useState(Taro.getWindowInfo());
@@ -32,7 +35,22 @@ export default function Page() {
         <IndexCard
           onClick={() => goPage("healthyCode/index")}
           icon={ScanCode}
+          title="本人信息扫码登记"
+        ></IndexCard>
+        <IndexCard
+          onClick={() => goScanPage("healthyCode/index")}
+          icon={Healthy}
           title="本人健康码自查询"
+        ></IndexCard>
+        <IndexCard
+          onClick={() => goScanPage("healthyCode/index")}
+          icon={Employee}
+          title="字节员工扫码登记"
+        ></IndexCard>
+        <IndexCard
+          onClick={() => goScanPage("healthyCode/index")}
+          icon={Fitness}
+          title="字节健身扫码登记"
         ></IndexCard>
       </View>
       <View className="bg"></View>
