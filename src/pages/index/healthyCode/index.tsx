@@ -77,6 +77,50 @@ export default function Page() {
           <View className="time">{time}</View>
         </View>
         <View className="avatarWrapper">
+          <View className="dotGroup top">
+            {Array(11)
+              .fill(undefined)
+              .map((_item, index) => {
+                return (
+                  <View key={index} className="dot">
+                    {}
+                  </View>
+                );
+              })}
+          </View>
+          <View className="dotGroup bottom">
+            {Array(11)
+              .fill(undefined)
+              .map((_item, index) => {
+                return (
+                  <View key={index} className="dot">
+                    {}
+                  </View>
+                );
+              })}
+          </View>
+          <View className="dotGroup left">
+            {Array(11)
+              .fill(undefined)
+              .map((_item, index) => {
+                return (
+                  <View key={index} className="dot">
+                    {}
+                  </View>
+                );
+              })}
+          </View>
+          <View className="dotGroup right">
+            {Array(11)
+              .fill(undefined)
+              .map((_item, index) => {
+                return (
+                  <View key={index} className="dot">
+                    {}
+                  </View>
+                );
+              })}
+          </View>
           <Image
             mode="aspectFill"
             className="avatar"

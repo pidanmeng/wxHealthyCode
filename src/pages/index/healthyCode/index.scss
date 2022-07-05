@@ -72,11 +72,47 @@
     margin: 30px auto;
     height: 354px;
     width: 354px;
-    border-radius: 20px;
-    border: 15px dotted #208ffa;
-    animation: dotFlash 0.5s linear infinite;
     display: flex;
-    padding: 8px;
+    padding: 24px;
+    position: relative;
+    .dotGroup {
+      display: flex;
+      position: absolute;
+      justify-content: space-around;
+
+      &.top {
+        top: 0;
+        left: 10px;
+        right: 10px;
+        animation: dotFlashTop 0.7s linear infinite;
+      }
+      &.bottom {
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        animation: dotFlashBottom 0.7s linear infinite;
+      }
+      &.left {
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+        flex-direction: column;
+        animation: dotFlashLeft 0.7s linear infinite;
+      }
+      &.right {
+        top: 10px;
+        bottom: 10px;
+        right: 0;
+        flex-direction: column;
+        animation: dotFlashRight 0.7s linear infinite;
+      }
+      .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: #14c602;
+      }
+    }
 
     .avatar {
       background-position: center center;
@@ -195,17 +231,59 @@
   justify-content: center;
 }
 
-@keyframes dotFlash {
+@keyframes dotFlashTop {
   0% {
-    border-radius: 20px;
+    transform: translateX(-5px);
   }
   49% {
-    border-radius: 20px;
+    transform: translateX(-5px);
   }
   50% {
-    border-radius: 30px;
+    transform: translateX(5px);
   }
   100% {
-    border-radius: 30px;
+    transform: translateX(5px);
+  }
+}
+@keyframes dotFlashBottom {
+  0% {
+    transform: translateX(5px);
+  }
+  49% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+@keyframes dotFlashLeft {
+  0% {
+    transform: translateY(5px);
+  }
+  49% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes dotFlashRight {
+  0% {
+    transform: translateY(-5px);
+  }
+  49% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(5px);
   }
 }

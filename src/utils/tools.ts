@@ -10,6 +10,7 @@ export function goScanPage(path: string) {
     fail: () => {
       Taro.showToast({
         title: "二维码失效",
+        icon: "none",
       });
     },
   });

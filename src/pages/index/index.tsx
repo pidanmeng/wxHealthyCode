@@ -6,6 +6,7 @@ import ScanCode from "../../assets/scan-code.png";
 import Healthy from "../../assets/healthy.png";
 import Fitness from "../../assets/fitness.png";
 import Employee from "../../assets/employees.png";
+import { AtModal } from "taro-ui";
 import "./index.scss";
 import { goPage, goScanPage } from "../../utils/tools";
 
@@ -18,6 +19,12 @@ export default function Page() {
 
   return (
     <View className="app">
+      <AtModal
+        isOpened
+        title="免责声明"
+        confirmText="确认"
+        content="本小程序仅供个人学习使用，任何组织和个人不得公开传播或用于任何商业盈利、违法用途，否则一切后果由该组织或个人承担。制作者不承担任何法律及连带责任！"
+      />
       <View
         className="container"
         style={{
