@@ -45,7 +45,7 @@ export default function Page() {
           title="本人信息扫码登记"
         ></IndexCard>
         <IndexCard
-          onClick={() => goScanPage("healthyCode/index")}
+          onClick={() => goScanPage("healthyCodeScan/index")}
           icon={Healthy}
           title="本人健康码自查询"
         ></IndexCard>
