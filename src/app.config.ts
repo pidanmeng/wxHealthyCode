@@ -4,6 +4,7 @@ export default defineAppConfig({
     "pages/index/healthyCode/index",
     "pages/index/healthyCodeScan/index",
     "pages/index/employeeScan/index",
+    "pages/index/fitnessScan/index",
   ],
   window: {
     backgroundColor: "#f6f6f6",

@@ -1,0 +1,179 @@
+.app {
+  .bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, #2c92c9, #0c3285 75%);
+    .fitnessMainPic {
+      background-image: url(../../../assets/fitness-main-pic.jpg);
+      mix-blend-mode: screen;
+      height: 100%;
+      background-size: 75%;
+      background-position: left top;
+      background-repeat: no-repeat;
+    }
+  }
+  .tabs {
+    margin: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    padding: 2px;
+    border-radius: 60px;
+    background-color: #fff;
+    color: #1a367d;
+    .tab {
+      padding: 5px 20px;
+      border-radius: 60px;
+      &:first-child {
+        color: #fff;
+        background: #1a367d;
+      }
+    }
+  }
+  .card {
+    position: relative;
+    height: 650px;
+    margin: 40px;
+    background: linear-gradient(165deg, transparent 180px, #fff 182px);
+    border-radius: 0 0 40px 40px;
+    .userInfo {
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      .avatar {
+        display: block;
+        height: 160px;
+        width: 160px;
+        border-radius: 160px;
+        overflow: hidden;
+        box-shadow: 0 0 0 10px #ffffff33;
+      }
+      .employeeInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        text-align: end;
+        .name {
+          color: #444;
+          font-size: 36px;
+          margin-bottom: 10px;
+        }
+        .idWrapper {
+          position: relative;
+
+          .id {
+            color: #999;
+            padding-bottom: 6px;
+            font-size: 24px;
+            &.idBorder {
+              border-bottom: 2px solid #e5605b;
+              display: inline-flex;
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 100%;
+              box-sizing: border-box;
+              align-items: center;
+              color: transparent;
+            }
+          }
+        }
+      }
+    }
+    .amount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #86b1dd;
+      font-size: 24px;
+      .fitnessAmount {
+        margin-bottom: 20px;
+      }
+      .fitnessAmountBoard {
+        height: 110px;
+        width: 520px;
+        margin-bottom: 10px;
+        filter: drop-shadow(0 0 60px #3660aa77);
+        background-image: linear-gradient(
+          120deg,
+          transparent 89px,
+          #3660aa 91px,
+          #1c367f 429px,
+          transparent 431px
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .number {
+          font-size: 54px;
+          color: #fff;
+          background-color: #86b1dd;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 80px;
+          width: 80px;
+          border-radius: 20px;
+          margin: 0 20px;
+        }
+      }
+    }
+    .buttonWrapper {
+      display: flex;
+      align-items: center;
+      .overCheckIn {
+        color: #3b9120;
+        font-size: 24px;
+        margin: 80px auto 40px;
+        border-radius: 120px;
+        padding: 20px 80px;
+        display: inline-block;
+      }
+      .checkInButton {
+        margin: 80px auto 40px;
+        border-radius: 120px;
+        padding: 20px 80px;
+        background-color: #86b9eb;
+        color: #fff;
+        display: inline-block;
+      }
+    }
+    .shadow {
+      position: absolute;
+      width: 90%;
+      height: 20px;
+      bottom: -20px;
+      border-radius: 0 0 20px 20px;
+      background-color: #fff2;
+      left: 50%;
+      margin-left: -45%;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 40px;
+        border-radius: 0 0 20px 20px;
+        background-color: #fff2;
+        left: 50%;
+        margin-left: -45%;
+      }
+    }
+  }
+  .sloganWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 160px;
+
+    .slogan {
+      width: 50%;
+    }
+  }
+}

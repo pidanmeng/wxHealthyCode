@@ -1,6 +1,7 @@
+import { useEmployeeInfo } from "../../../hooks/useEmployeeInfo";
 import { View, Image, Input } from "@tarojs/components";
 import Taro from "@tarojs/taro";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import BytedanceLogo from "../../../assets/bytedance-logo.png";
 import IDCardAuthority from "../../../assets/id-card-authority.png";
 import IDCardLost from "../../../assets/id-card-lost.png";
@@ -8,53 +9,17 @@ import style from "./index.module.scss";
 
 export default function Page() {
   const [buttonRect] = useState(Taro.getMenuButtonBoundingClientRect());
-  const [employeeInfo, setEmployeeInfo] = useState({
-    name: "点击输入姓名",
-    id: "点击输入7位数字工号",
-    avatar:
-      "https://i0.hdslb.com/bfs/article/2df02beebe3318ac1b052598721bcb07934d3d84.jpg@942w_945h_progressive.webp",
-  });
-  useEffect(() => {
-    try {
-      Taro.getStorage({
-        key: "employeeInfo",
-        success: (res) => {
-          setEmployeeInfo(res.data);
-        },
-      });
-    } catch (e) {
-      console.error(e);
-    }
-  }, []);
+  const { employeeInfo, setEmployeeName, setEmployeeId, setEmployeeAvatar } =
+    useEmployeeInfo();
 
   const saveEmployeeName = (e) => {
     const name = e?.detail?.value;
-    setEmployeeInfo((preValue) => {
-      const tempRes = {
-        ...preValue,
-        name,
-      };
-      Taro.setStorage({
-        key: "employeeInfo",
-        data: tempRes,
-      });
-      return tempRes;
-    });
+    setEmployeeName(name);
   };
 
   const saveEmployeeId = (e) => {
     const id = e?.detail?.value;
-    setEmployeeInfo((preValue) => {
-      const tempRes = {
-        ...preValue,
-        id,
-      };
-      Taro.setStorage({
-        key: "employeeInfo",
-        data: tempRes,
-      });
-      return tempRes;
-    });
+    setEmployeeId(id);
   };
 
   const selectAvatar = () => {
@@ -65,17 +30,7 @@ export default function Page() {
       success: (res) => {
         console.log(res);
         const tempAvatar = res.tempFiles?.[0]?.tempFilePath;
-        setEmployeeInfo((preValue) => {
-          const tempRes = {
-            ...preValue,
-            avatar: tempAvatar,
-          };
-          Taro.setStorage({
-            key: "employeeInfo",
-            data: tempRes,
-          });
-          return tempRes;
-        });
+        setEmployeeAvatar(tempAvatar);
       },
     });
   };
