@@ -3,8 +3,26 @@
         "miniprogram": {
             "list": [
                 {
-                    "name": "jkm查询",
+                    "name": "健康码自查",
                     "pathName": "pages/index/healthyCode/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "健康码扫码登记",
+                    "pathName": "pages/index/healthyCodeScan/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "字节员工扫码登记",
+                    "pathName": "pages/index/employeeScan/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "健身房扫码登记",
+                    "pathName": "pages/index/fitnessScan/index",
                     "query": "",
                     "scene": null
                 }

@@ -1,0 +1,29 @@
+.app {
+  height: 100vh;
+  background-color: #fff;
+  .bg {
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    position: fixed;
+    background-image: url(../../assets/index-bg.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    color: #fff;
+    z-index: 1;
+    padding: 0 40px;
+    box-sizing: border-box;
+    .title {
+      font-weight: bold;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
