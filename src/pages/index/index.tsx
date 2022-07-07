@@ -40,12 +40,12 @@ export default function Page() {
           北京健康宝
         </View>
         <IndexCard
-          onClick={() => goPage("healthyCode/index")}
+          onClick={() => goPage("healthyCodeScan/index")}
           icon={ScanCode}
           title="本人信息扫码登记"
         ></IndexCard>
         <IndexCard
-          onClick={() => goScanPage("healthyCodeScan/index")}
+          onClick={() => goScanPage("healthyCode/index")}
           icon={Healthy}
           title="本人健康码自查询"
         ></IndexCard>
