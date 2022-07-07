@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { View, Image, Text } from "@tarojs/components";
 import Taro from "@tarojs/taro";
+import QRCodeBlue from "../../../assets/qrcode-blue.png";
+import HelpWhite from "../../../assets/help-white.png";
 import "./index.scss";
+import HSInfo from "../../../assets/hsInfo.jpg";
+
+const DateFormatRule = "YYYY-MM-DD HH:mm:ss";
 
 export default function Page() {
-  const [time, setTime] = useState(dayjs(Date.now()).format("HH:mm:ss"));
+  const [time, setTime] = useState(dayjs(Date.now()).format(DateFormatRule));
   const [avatar, setAvatar] = useState(
     "https://i0.hdslb.com/bfs/article/2df02beebe3318ac1b052598721bcb07934d3d84.jpg@942w_945h_progressive.webp"
   );
@@ -29,7 +34,7 @@ export default function Page() {
     }
 
     const interval = setInterval(() => {
-      setTime(dayjs(Date.now()).format("HH:mm:ss"));
+      setTime(dayjs(Date.now()).format(DateFormatRule));
     }, 1000);
     return () => {
       clearInterval(interval);
@@ -57,35 +62,24 @@ export default function Page() {
       <View className="healthyCode">
         <View className="topBar"></View>
       </View>
-      <View className="card">
+      <View className="cardTop">
         <Image
           className="logo"
           src="https://lf3-static.bytednsdoc.com/obj/eden-cn/bpxnupqnult/logo.png"
         />
-        <View className="qrCodeWrapper">
-          <View className="qrCodeButton">
-            <Image
-              className="qrCodeIcon"
-              src="https://lf3-static.bytednsdoc.com/obj/eden-cn/bpxnupqnult/qrcode.png"
-            ></Image>
-          </View>
-        </View>
+        <Image className="qrCodeIcon" src={QRCodeBlue}></Image>
         <View className="topContent">
-          <View className="date">
-            {dayjs(Date.now()).format("YYYY年MM月DD日")}
-          </View>
-          <View className="time">{time}</View>
+          <View className="name">王*</View>
+          <View className="idCard">32**************35</View>
         </View>
+      </View>
+      <View className="cardMiddle">
         <View className="avatarWrapper">
           <View className="dotGroup top">
             {Array(11)
               .fill(undefined)
               .map((_item, index) => {
-                return (
-                  <View key={index} className="dot">
-                    {}
-                  </View>
-                );
+                return <View key={index} className="dot" />;
               })}
           </View>
           <View className="dotGroup bottom">
@@ -130,52 +124,21 @@ export default function Page() {
         </View>
         <View className="coreTips">
           <View className="qrCodeIconWrapper">
-            <View className="qrCodeIcon"></View>
+            <View className="qrCodeIconGreen"></View>
             <View className="qrCodeDesc">
               <View className="qrCodeDescText">绿码</View>
             </View>
           </View>
-          <View className="content">未见异常</View>
-          <Image
-            className="tip"
-            src="https://lf3-static.bytednsdoc.com/obj/eden-cn/bpxnupqnult/dd_tips.png"
-          />
+          <View className="content">扫码未见异常</View>
+          <Image mode="aspectFill" className="tip" src={HelpWhite}></Image>
         </View>
-        <Image
-          className="hsCard"
-          mode="widthFix"
-          src="https://lf3-static.bytednsdoc.com/obj/eden-cn/bpxnupqnult/hsCard.png"
-        ></Image>
+        <View className="time">{time}</View>
       </View>
-      <View className="card userInfo">
-        <View className="keys">
-          <View className="key">
-            <View className="keyText">
-              姓<Text></Text>名
-            </View>
-          </View>
-          <View className="key">
-            <View className="keyText">身份证号</View>
-          </View>
-          <View className="key">
-            <View className="keyText">查询时间</View>
-          </View>
-          <View className="key">
-            <View className="keyText">失效时间</View>
-          </View>
-        </View>
-        <View className="values">
-          <View className="value">王**</View>
-          <View className="value">32**************35</View>
-          <View className="value">
-            {dayjs(Date.now()).format("MM-DD 10:42")}
-          </View>
-          <View className="value">
-            {dayjs(Date.now()).format("MM-DD 24:00")}
-          </View>
-        </View>
+      <View className="cardBottom">
+        <Image mode="widthFix" className="hsInfo" src={HSInfo}></Image>
       </View>
       <View className="buttonBack">返回首页</View>
+      <View className="sign">北京市大数据中心</View>
     </View>
   );
 }

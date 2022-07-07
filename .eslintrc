@@ -1,6 +1,4 @@
 {
-  "extends": [
-    "taro/preact",
-    "plugin:react/jsx-runtime"
-  ]
+  "extends": ["taro/preact", "plugin:react/jsx-runtime"],
+  "jsx-quotes": "prefer-double"
 }

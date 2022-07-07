@@ -7,13 +7,13 @@
 }
 
 .topBar {
-  background-image: linear-gradient(#4287fd, #3849f5, );
+  background-image: linear-gradient(#4287fd, #3849f5);
   width: 100%;
   height: 100px;
   position: fixed;
   z-index: -1;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 100px;
     display: block;
@@ -72,11 +72,47 @@
     margin: 30px auto;
     height: 354px;
     width: 354px;
-    border-radius: 20px;
-    border: 15px dotted #208ffa;
-    animation: dotFlash 0.5s linear infinite;
     display: flex;
-    padding: 8px;
+    padding: 24px;
+    position: relative;
+    .dotGroup {
+      display: flex;
+      position: absolute;
+      justify-content: space-around;
+
+      &.top {
+        top: 0;
+        left: 10px;
+        right: 10px;
+        animation: dotFlashTop 0.7s linear infinite;
+      }
+      &.bottom {
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        animation: dotFlashBottom 0.7s linear infinite;
+      }
+      &.left {
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+        flex-direction: column;
+        animation: dotFlashLeft 0.7s linear infinite;
+      }
+      &.right {
+        top: 10px;
+        bottom: 10px;
+        right: 0;
+        flex-direction: column;
+        animation: dotFlashRight 0.7s linear infinite;
+      }
+      .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: #14c602;
+      }
+    }
 
     .avatar {
       background-position: center center;
@@ -107,7 +143,7 @@
         background-position: center;
         height: 100%;
         width: 100%;
-        transform: scale(.8);
+        transform: scale(0.8);
       }
       .qrCodeDesc {
         color: #14c602;
@@ -130,9 +166,8 @@
     .content {
       margin: 0 20px;
       color: #14c602;
-      font-size:56px;
+      font-size: 56px;
       font-weight: bold;
-      animation: textFlash 1s linear infinite;
     }
     .tip {
       height: 48px;
@@ -162,7 +197,7 @@
           justify-content: space-between;
         }
         &::after {
-          content: ':';
+          content: ":";
           position: absolute;
           right: -20px;
           bottom: 0;
@@ -196,32 +231,59 @@
   justify-content: center;
 }
 
-@keyframes dotFlash {
+@keyframes dotFlashTop {
   0% {
-    border-radius: 20px;
+    transform: translateX(-5px);
   }
   49% {
-    border-radius: 20px;
+    transform: translateX(-5px);
   }
   50% {
-    border-radius: 30px;
+    transform: translateX(5px);
   }
   100% {
-    border-radius: 30px;
+    transform: translateX(5px);
   }
 }
-
-@keyframes textFlash {
+@keyframes dotFlashBottom {
   0% {
-    opacity: 0;
+    transform: translateX(5px);
   }
   49% {
-    opacity: 0;
+    transform: translateX(5px);
   }
   50% {
-    opacity: 1;
+    transform: translateX(-5px);
   }
   100% {
-    opacity: 1;
+    transform: translateX(-5px);
+  }
+}
+@keyframes dotFlashLeft {
+  0% {
+    transform: translateY(5px);
+  }
+  49% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes dotFlashRight {
+  0% {
+    transform: translateY(-5px);
+  }
+  49% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(5px);
   }
 }

@@ -1,0 +1,352 @@
+@font-face {
+  font-family: "Akrobat SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Akrobat SemiBold"),
+    url("https://fonts.cdnfonts.com/s/14486/Akrobat-SemiBold.woff")
+      format("woff");
+}
+.app {
+  background-color: #f6f6f6;
+  min-height: 100vh;
+  z-index: -2;
+  position: absolute;
+  width: 100%;
+}
+
+.topBar {
+  background-image: linear-gradient(#4287fd, #3849f5);
+  background-image: radial-gradient(circle at 0 0, #4287fd, transparent 20%),
+    radial-gradient(circle at 50% 0, #4287fd, transparent 100%),
+    radial-gradient(circle at 100% 0, #4287fd, transparent 20%),
+    radial-gradient(circle at 0 100%, #d2ebc0, transparent 50%),
+    radial-gradient(circle at right, #bdff88, transparent 50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+.cardTop {
+  background-color: #fff;
+  border-radius: 24px 24px 0 0;
+  padding: 34px 34px 54px 34px;
+  margin: 0 30px 0;
+  position: relative;
+  .logo {
+    position: absolute;
+    top: 34px;
+    left: 34px;
+    width: 64px;
+    height: 64px;
+  }
+  .qrCodeIcon {
+    position: absolute;
+    right: 34px;
+    top: 34px;
+    height: 64px;
+    width: 64px;
+  }
+  .topContent {
+    display: flex;
+    color: #000;
+    flex-direction: column;
+    align-items: center;
+    height: 64px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Akrobat SemiBold";
+    .name {
+      font-size: 30px;
+    }
+  }
+}
+.cardMiddle {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 34px;
+  margin: 0 30px 0;
+  filter: drop-shadow(0 -25px 20px rgba(153, 153, 153, 0.5));
+  transform: translateZ(0);
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -20px;
+    left: 0;
+    background: linear-gradient(45deg, #fff 0 40%, transparent 40% 100%),
+      linear-gradient(-45deg, #fff 0 40%, transparent 40% 100%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: -20px;
+    left: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 0 10px,
+        #fff 10px 90%,
+        transparent 90% 100%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 0 10px,
+        #fff 10px 90%,
+        transparent 90% 100%
+      );
+  }
+  .avatarWrapper {
+    margin: 30px auto;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    padding: 30px;
+    position: relative;
+    .dotGroup {
+      display: flex;
+      position: absolute;
+      justify-content: space-around;
+
+      &.top {
+        top: 0;
+        left: 10px;
+        right: 10px;
+        animation: dotFlashTop 0.7s linear infinite;
+      }
+      &.bottom {
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        animation: dotFlashBottom 0.7s linear infinite;
+      }
+      &.left {
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+        flex-direction: column;
+        animation: dotFlashLeft 0.7s linear infinite;
+      }
+      &.right {
+        top: 10px;
+        bottom: 10px;
+        right: 0;
+        flex-direction: column;
+        animation: dotFlashRight 0.7s linear infinite;
+      }
+      .dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 20px;
+        background-color: #14c602;
+      }
+    }
+
+    .avatar {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      flex: 1;
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .coreTips {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #02a580, #39da94, #04cb86);
+    padding: 10px;
+    border-radius: 6px;
+    .qrCodeIconWrapper {
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      .qrCodeIconGreen {
+        background-image: url(../../../assets/qrcode-white.png);
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        transform: scale(0.8);
+      }
+      .qrCodeDesc {
+        color: #fff;
+        display: block;
+        height: 100%;
+        transform: translateY(-100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &Text {
+          transform: scale(0.8);
+          font-size: 14px;
+          display: block;
+          background: #02a580;
+          border-radius: 6px;
+          font-weight: bold;
+          padding: 6px;
+        }
+      }
+    }
+    .content {
+      margin: 0 20px;
+      color: #fff;
+      font-size: 36px;
+      font-weight: bold;
+      animation: textFlash 1.5s linear infinite;
+    }
+    .tip {
+      height: 36px;
+      width: 36px;
+    }
+  }
+  .time {
+    margin-top: 20px;
+    font-family: "Akrobat SemiBold";
+  }
+}
+.cardBottom {
+  background-color: #fff;
+  position: relative;
+  padding: 0 10px;
+  margin: 38px 30px 0;
+  transform: translateZ(0);
+  border-radius: 0 0 24px 24px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    right: 10px;
+    border-top: 4px dashed #999;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -20px;
+    left: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 0 10px,
+        #fff 10px 90%,
+        transparent 90% 100%
+      ),
+      linear-gradient(
+        -135deg,
+        transparent 0 10px,
+        #fff 10px 90%,
+        transparent 90% 100%
+      );
+  }
+  .hsInfo {
+    width: 100%;
+  }
+}
+.buttonBack {
+  padding: 28px;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 34px 30px 34px;
+  border-radius: 12px;
+  color: #333;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px auto;
+  font-size: 24px;
+  color: #999;
+}
+
+@keyframes dotFlashTop {
+  0% {
+    transform: translateX(-5px);
+  }
+  49% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+@keyframes dotFlashBottom {
+  0% {
+    transform: translateX(5px);
+  }
+  49% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+@keyframes dotFlashLeft {
+  0% {
+    transform: translateY(5px);
+  }
+  49% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes dotFlashRight {
+  0% {
+    transform: translateY(-5px);
+  }
+  49% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+@keyframes textFlash {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
