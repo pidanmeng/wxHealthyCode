@@ -39,14 +39,19 @@ export default function Page() {
         <View className={style.userInfo}>
           <OpenData className={style.avatar} type="userAvatarUrl" />
           <View className={style.employeeInfo}>
-            <Input
-              onBlur={saveEmployeeName}
-              className={style.name}
-              value={employeeInfo.name}
-            />
+            <View className={style.nameWrapper}>
+              <Input
+                onInput={saveEmployeeName}
+                className={style.name}
+                value={employeeInfo.name}
+              />
+              <View className={`${style.namePlaceholder} ${style.name}`}>
+                {employeeInfo.name}
+              </View>
+            </View>
             <View className={style.idWrapper}>
               <Input
-                onBlur={saveEmployeeId}
+                onInput={saveEmployeeId}
                 className={style.id}
                 value={employeeInfo.id}
               />
